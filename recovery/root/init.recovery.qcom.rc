@@ -32,4 +32,5 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
 on boot
+    start health-hal-2-1
     setprop sys.usb.config adb
