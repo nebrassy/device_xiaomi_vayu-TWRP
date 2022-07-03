@@ -27,6 +27,13 @@
 
 import /init.recovery.qcom_decrypt.rc
 
+service overrideprops /system/bin/overrideprops.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
     user root
     group root
@@ -39,6 +46,8 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
 on boot
+    start overrideprops
     start health-hal-2-1
     start vendor.qti.vibrator
     setprop sys.usb.config adb
+

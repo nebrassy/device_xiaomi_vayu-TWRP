@@ -70,7 +70,7 @@ TW_EXCLUDE_APEX := true
 
 #Properties
 TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.date.utc;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental"
+    "ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental"
 
 # Vibrator
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
